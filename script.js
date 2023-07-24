@@ -20,25 +20,30 @@ async function checkWheather(city){
     document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
     document.querySelector(".wind").innerHTML = Math.round(data.wind.speed) + " km/hr";
 
+
+    console.log(wheatherIcon.src);
+    console.log(data.weather[0].main);
+
     if (data.weather[0].main == "Clouds") 
     {
-        wheatherIcon.src = "assets/clouds.png";
+        wheatherIcon.src = "./assets/clouds.png";
+        
     } 
-    else if(data.weather[0].main == "Clear") 
+    if(data.weather[0].main == "Clear") 
     {
-        wheatherIcon.src = "assets/clear.png";
+        wheatherIcon.src = "./assets/clear.png";
     } 
-    else if(data.weather[0].main == "Rain") 
+    if(data.weather[0].main == "Rain") 
     {
-        wheatherIcon.src = "assets/rain.png";
+        wheatherIcon.src = "./assets/rain.png";
     } 
-    else if(data.weather[0].main == "Drizzle") 
+    if(data.weather[0].main == "Drizzle") 
     {
-        wheatherIcon.src = "assets/drizzle.png";
+        wheatherIcon.src = "./assets/drizzle.png";
     } 
-    else (data.weather[0].main == "Mist") 
+    if (data.weather[0].main == "Mist") 
     {
-        wheatherIcon.src = "assets/mist.png";
+        wheatherIcon.src = "./assets/mist.png";
     }
 
     document.querySelector(".wheather").style.display = "flex"
